@@ -1,5 +1,4 @@
-
-
+-- assign event numbers and event days to each event and purchase
 
 WITH
   combined_user_data AS (
@@ -13,12 +12,7 @@ WITH
   FROM
     {{ ref('stg_events_purchases') }} 
 
--- apply filter for 30 days and relevant event names
-/*  WHERE (CAST(purchase_ts AS date) >= DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY)
-    OR CAST(event_ts AS DATE) >= DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY))
 
-    AND event_name in ('page_view','quote_start','quote_submit','purchase')
-*/
   )
 
 SELECT

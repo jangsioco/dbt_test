@@ -1,3 +1,4 @@
+--flatten combined_events_purchases to count distinct users from page_view to purchase
 WITH
   page_view AS (
   SELECT

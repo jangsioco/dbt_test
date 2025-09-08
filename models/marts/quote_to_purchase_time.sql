@@ -1,3 +1,5 @@
+--compute median time from quote to purchase in minutes
+
 SELECT
   event_day,
   platform,

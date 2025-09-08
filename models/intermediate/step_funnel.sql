@@ -1,3 +1,4 @@
+-- flatten the combined_events_purchases table into funnel steps
 WITH
   page_view AS (
   SELECT

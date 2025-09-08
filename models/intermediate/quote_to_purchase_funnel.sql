@@ -1,6 +1,4 @@
-
-
-
+-- flatten combined_events_purchases to compute time of first quote_start occurence to purchase
 
 WITH
   rank_ts AS (

@@ -1,3 +1,5 @@
+--combine all metrics into one table for easy consumption
+
 SELECT
   v.event_day,
   v.platform,

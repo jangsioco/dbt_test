@@ -1,4 +1,4 @@
-
+-- combine events and purchases for the last 30 days
 {{ config(
   materialized='table',
   on_schema_change='fail'
