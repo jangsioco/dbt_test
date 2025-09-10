@@ -5,6 +5,8 @@
 name: 'dbt_test'
 version: '1.0.0'
 
+vars:
+  days_past: 30
 # This setting configures which "profile" dbt uses for this project.
 profile: 'dbt_test'
 

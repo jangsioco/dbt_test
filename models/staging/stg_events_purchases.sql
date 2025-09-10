@@ -18,7 +18,7 @@ WITH
     'NA' as campaign,
     'purchase' as event_name
   FROM {{ ref('purchases') }} p
-  WHERE (CAST(p.purchase_ts AS date) >= DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY))
+  WHERE (CAST(p.purchase_ts AS date) >= DATE_SUB(CURRENT_DATE(), INTERVAL {{ var("days_past") }} DAY))
     UNION ALL
     SELECT
     e.user_id,
@@ -33,7 +33,7 @@ WITH
     e.event_name
   FROM
     {{ ref('events') }} e
-  WHERE (CAST(e.event_ts AS DATE) >= DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY))
+  WHERE (CAST(e.event_ts AS DATE) >= DATE_SUB(CURRENT_DATE(), INTERVAL {{ var("days_past") }} DAY))
     AND e.event_name in ('page_view','quote_start','quote_submit')
 
   )
