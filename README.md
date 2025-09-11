@@ -5,6 +5,7 @@ Welcome to your new dbt project!
 Try running the following commands:
 - dbt run
 - dbt test
+
 If you want to change the default 30 days, to say 39 days then run the following:
 - dbt run --vars '{days_past: 39}'
 
